@@ -1,3 +1,4 @@
+# This is a main game class
 import pygame
 from Background import Background
 from Player import Player

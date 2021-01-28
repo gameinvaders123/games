@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="416c6448-0c24-4bcd-ab2a-68ad61c12079" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../BirdInvader/Background.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BirdInvader/Bullet.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BirdInvader/Enemy.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BirdInvader/Player.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CarInvaders/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Background.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Game.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../SpaceInvader/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Background.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Background.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Bullet.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Bullet.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Caption.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Caption.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Enemy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Enemy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Explosion.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Explosion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Game.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Score.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Score.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/Stage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/Stage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/car_enemy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/main2.py" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/main2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/player_bird.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/stages/3/images/enemy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SpaceInvader/stages/3/setting/setting.json" beforeDir="false" afterPath="$PROJECT_DIR$/../SpaceInvader/stages/3/setting/setting.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BirdInvader/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BirdInvader/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarInvaders/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CarInvaders/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CarInvaders/Game.py" beforeDir="false" afterPath="$PROJECT_DIR$/../CarInvaders/Game.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

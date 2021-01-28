@@ -9,9 +9,8 @@ class Caption:
 
     @property
     def icon(self):
-        return self.game.stage.folder + 'images/ufo.png'
+        return './ufo.png'
 
     def load(self):
-        pygame.display.set_caption("Space Invader")
+        pygame.display.set_caption("Fish Invader")
         icon = pygame.image.load(self.icon)
-        pygame.display.set_icon(icon)

@@ -2,8 +2,7 @@ from Setting import Setting
 
 
 class Stage:
-
-    number = 0
+    number = 3
     setting = None
     game = None
 
@@ -20,5 +19,9 @@ class Stage:
         return "./stages/" + str(self.number) + "/"
 
     @property
-    def explosion_sound(self):
-        return self.game.stage.folder + 'sound/explosion.wav'
+    def folder_sound(self):
+        return self.folder + "/sound"
+
+    @property
+    def folder_image(self):
+        return self.folder + "/images"

@@ -2,10 +2,17 @@ from pygame import mixer
 
 
 class Explosion:
+    sound = None
+
     def __init__(self, game):
         self.game = game
 
-    def explode(self):
-        explosionSound = mixer.Sound(self.game.stage.explosion_sound)
-        explosionSound.play()
+    @property
+    def sound_file(self):
+        return './explosion.wav'
 
+    def load(self):
+        self.sound = mixer.Sound(self.sound_file)
+
+    def explode(self):
+        self.sound.play()

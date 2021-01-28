@@ -1,75 +1,69 @@
-import random
 import pygame
-from pygame import mixer
 import math
+import random
+from EnemyType import EnemyType
 
 
 class Enemy:
-
     game = None
-    images = []
-    x = []
-    y = []
-    x_change = []
-    y_change = []
+    enemy_type = None
+    image = None
+    x = 0
+    y = 0
+    x_change = 4
+    y_change = 40
 
-    def __init__(self, game):
+    def __init__(self, game, enemy_type):
         self.game = game
+        self.enemy_type = enemy_type
 
     @property
     def image_file(self):
-        return self.game.stage.folder + 'images/enemy.png'
+        return './' + str(self.enemy_type) + '.png'
 
-    def show(self, x, y, i):
-        self.game.screen.blit(self.images[i], (x, y))
+    @property
+    def points(self):
+        if self.enemy_type == EnemyType.King:
+            return 100
+        elif self.enemy_type == EnemyType.Queen:
+            return 45
+        elif self.enemy_type == EnemyType.Pawn:
+            return 10
+        else:
+            return 0
+
+    def show(self, x, y):
+        self.game.screen.blit(self.image, (x, y))
 
     def load(self):
-        self.images = []
-        self.x = []
-        self.y = []
-        self.x_change = []
-        self.y_change = []
-
-        num_of_enemies = self.game.stage.setting.num_of_enemies
-
-        for i in range(num_of_enemies):
-            self.images.append(pygame.image.load(self.image_file))
-            self.x.append(random.randint(0, 736))
-            self.y.append(random.randint(50, 150))
-            self.x_change.append(4)
-            self.y_change.append(40)
+        self.image = pygame.image.load(self.image_file)
+        self.x = random.randint(0, 736)
+        self.y = random.randint(50, 150)
 
     def move(self):
-        for i in range(self.game.stage.setting.num_of_enemies):
-            if self.y[i] > 440:
-                for j in range(self.game.stage.setting.num_of_enemies):
-                    self.y[j] = 2000
-                self.game.game_over.show()
-                break
+        self.x += self.x_change
+        if self.x <= 0:
+            self.x_change = 4
+            self.y += self.y_change
+        elif self.x >= 736:
+            self.x_change = -4
+            self.y += self.y_change
 
-            self.x[i] += self.x_change[i]
-            if self.x[i] <= 0:
-                self.x_change[i]=4
-                self.y[i] += self.y_change[i]
-            elif self.x[i] >= 736:
-                self.x_change[i] =- 4
-                self.y[i] += self.y_change[i]
+        self.check_collision()
+        self.show(self.x, self.y)
 
-            # Collision
-            collision = self.isCollision(self.x[i], self.y[i], self.game.bullet.x, self.game.bullet.y)
-            if collision:
-                self.game.explosion.explode()
-                self.game.bullet.y = 480
-                self.game.bullet.state = "ready"
-                self.game.score.value += 1
-                self.x[i] = random.randint(0, 736)
-                self.y[i] = random.randint(50, 150)
+    def check_collision(self):
+        distance = math.sqrt(math.pow(self.x - self.game.bullet.x, 2) + (math.pow(self.y - self.game.bullet.y, 2)))
 
-            self.show(self.x[i], self.y[i], i)
-
-    def isCollision(self, enemy_x, enemy_y, bullet_x, bullet_y):
-        distance = math.sqrt(math.pow(enemy_x - bullet_x, 2) + (math.pow(enemy_y - bullet_y, 2)))
         if distance < 27:
-            return True
-        else:
-            return False
+            self.game.explosion.explode()
+            self.game.bullet.ready()
+
+            self.game.score.value += self.points
+            self.game.enemies.remove(self)
+
+    def has_reached_player(self):
+        return self.y > 440
+
+    def hide(self):
+        self.y = 2000

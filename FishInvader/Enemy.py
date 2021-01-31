@@ -55,7 +55,7 @@ class Enemy:
     def check_collision(self):
         distance = math.sqrt(math.pow(self.x - self.game.bullet.x, 2) + (math.pow(self.y - self.game.bullet.y, 2)))
 
-        if distance < 280:
+        if distance < 28:
             self.game.explosion.explode()
             self.game.bullet.ready()
 

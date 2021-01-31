@@ -45,7 +45,7 @@ class Enemy:
         if self.x <= 0:
             self.x_change = 4
             self.y += self.y_change
-        elif self.x >= 736:
+        elif self.x >= 726:
             self.x_change = -4
             self.y += self.y_change
 
@@ -63,7 +63,7 @@ class Enemy:
             self.game.enemies.remove(self)
 
     def has_reached_player(self):
-        return self.y > 440
+        return self.y > 430
 
     def hide(self):
         self.y = 2000

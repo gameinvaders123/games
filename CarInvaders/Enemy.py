@@ -45,7 +45,7 @@ class Enemy:
         if self.x <= 0:
             self.x_change = 4
             self.y += self.y_change
-        elif self.x >= 726:
+        elif self.x >= 736:
             self.x_change = -4
             self.y += self.y_change
 
@@ -55,7 +55,7 @@ class Enemy:
     def check_collision(self):
         distance = math.sqrt(math.pow(self.x - self.game.bullet.x, 2) + (math.pow(self.y - self.game.bullet.y, 2)))
 
-        if distance < 280:
+        if distance < 268:
             self.game.explosion.explode()
             self.game.bullet.ready()
 
@@ -63,7 +63,7 @@ class Enemy:
             self.game.enemies.remove(self)
 
     def has_reached_player(self):
-        return self.y > 430
+        return self.y > 440
 
     def hide(self):
         self.y = 2000

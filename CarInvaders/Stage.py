@@ -1,3 +1,5 @@
+from Setting import Setting
+
 class Stage:
     number = 0
     setting = None
@@ -6,6 +8,7 @@ class Stage:
 
     def __init__(self, game):
         self.game = game
+        self.setting = Setting(self.game)
 
     @property
     def folder(self):
@@ -19,9 +22,14 @@ class Stage:
     def folder_image(self):
         return self.folder + "image/"
 
+    @property
+    def folder_setting(self):
+        return self.folder + "setting/"
+
     def next(self):
         if self.number < self.max:
             self.number += 1
+            self.setting.load()
             return True
         else:
             return False

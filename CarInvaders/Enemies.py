@@ -4,7 +4,6 @@ from Enemy import Enemy
 
 class Enemies:
     game = None
-    num_of_pawns = 6
     enemy_list = []
 
     def __init__(self, game):
@@ -14,7 +13,7 @@ class Enemies:
         self.add(EnemyType.King)
         self.add(EnemyType.Queen)
 
-        for i in range(self.num_of_pawns):
+        for i in range(self.game.stage.setting.num_of_pawns):
             self.add(EnemyType.Pawn)
 
     def add(self, enemy_type):

@@ -14,3 +14,4 @@ class Caption:
     def load(self):
         pygame.display.set_caption("Bird Invader")
         icon = pygame.image.load(self.icon)
+        pygame.display.set_icon(icon)
